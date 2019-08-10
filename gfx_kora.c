@@ -83,7 +83,7 @@ int gfx_loop(gfx_t *gfx, void *arg, gfx_handlers_t *handlers)
     handlers->expose(gfx, arg, &seat);
     gfx_flip(gfx);
     for (;;) {
-        if (read(gfx->fi, (char*)&msg, sizeof(msg)) < sizeof(msg))
+        if (read(gfx->fi, (char *)&msg, sizeof(msg)) < sizeof(msg))
             continue;
         switch (msg.message) {
         case EV_QUIT:
